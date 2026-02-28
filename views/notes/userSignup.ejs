@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes Sign Up</title>
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <h1>Create a New Account</h1>
+
+    <form action="/user/userSignup" method="POST" class="login-form">
+        <input name="username" placeholder="Enter your username" required/>
+        <input name="password" placeholder="Enter your password" type="password" required/>
+        <input name="confirmPassword" placeholder="Confirm your password" type="password" required/>
+        <button class="btn" name="signup-btn">Sign Up</button>
+    </form>
+
+    <a href="/note/userLogin" class="btn">Already have an account? Login</a>
+</body>
+</html>

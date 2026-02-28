@@ -1,0 +1,32 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "description": "A full-stack web-based Note Taking Application that allows users to create, edit, delete, and organize notes with persistent database storage and RESTful API integration.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palvreet-k/note-taking-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/palvreet-k/note-taking-app/issues"
+  },
+  "homepage": "https://github.com/palvreet-k/note-taking-app#readme",
+  "dependencies": {
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mogoose": "^0.0.1-security",
+    "node": "^25.7.0",
+    "nodemon": "^3.1.14",
+    "router": "^2.2.0"
+  }
+}

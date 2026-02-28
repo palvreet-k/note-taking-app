@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+    <h1>My Notes</h1>
+    <a href="/notes/addNote" class="btn add-btn"> + Add Note</a>
+    <div class="container" id="notes">
+        <% if(notes.length===0) {%>
+            <p> You have no notes yet, Click "Add Notes" to start adding new notes</p>
+            <%}%>
+                <% notes.forEach(note=>{ %>
+                    <div class="note">
+                        <div class="note-header">
+                            <h3>
+                                <%=note.date%>
+                            </h3>
+                            <small>
+                                <%=note.title%>
+                            </small>
+                        </div>
+                        <p>
+                            <%=note.content%>
+                        </p>
+                        <div class="actions">
+                            <a href="notes/editNote/<%= note._id%>" class="btn edit-btn">Edit Note</a>
+                            <form action="/notes/deleteNote/<%= note._id %>" method="POST">
+                                <button type="submit" class="btn delete-btn">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <% })%>
+    </div>
+</body>
+
+</html>

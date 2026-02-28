@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes Login</title>
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <h1> Please login to view your notes</h1>
+    <form action="note/userNotes" method="POST" class="login-form">
+    <input name = "username" placeholder="Enter your username" required/>
+    <input name = "password" placeholder="Enter your password" required/>
+    <button name="login-btn">Login</button>
+    </form>
+    <a href="note/userSignup" >Sign Up</a>
+</body>
