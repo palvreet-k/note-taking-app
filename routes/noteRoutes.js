@@ -1,13 +1,15 @@
 
-import { showAllNotes, addNewNote, showEditNoteForm, deleteNote} from "../controllers/notes"
+import express from 'express';
+import { showAllNotes, showNewNoteForm, addNoteSuccess, showEditNoteForm, editNoteSucess, deleteNote} from "../controllers/notesController.js"
 
-const router = express.Router();
+const router = express.Router({mergeParams: true});
 
-router.get("/notes", showAllNotes)
-router.post("/notes", addNewNote)
-router.get("/notes/editNote/:id", showEditNoteForm)
-router.post("/notes/editNote/:id", editNote)
-router.post("/notes/deleteNote/:id", deleteNote)
+router.get("/", showAllNotes)
+router.get("/addNote", showNewNoteForm)
+router.post("/addNote", addNoteSuccess)
+router.get("/editNote/:id", showEditNoteForm)
+router.post("/editNote/:id", editNoteSucess)
+router.post("/deleteNote/:id", deleteNote)
 
 export default router;
 

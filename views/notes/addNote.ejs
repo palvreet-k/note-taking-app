@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Notes</title>
+    <title>Add Note</title>
 
     <!-- Link external CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<h1>Add New Note</h1>
+<h1 class="heading-font">Add New Note</h1>
 <div class ="container">
-<form action="/notes/allNotes" method = "POST" class ="note-form">
+<form action="/users/<%= user._id %>/notes/addNote" method = "POST" class ="note-form">
     <input name = "title" placeholder="Add Note Title" required/>
-    <input name = "content" placeholder="Start Typing your note here.." />
+    <textarea name="content" placeholder="Start Typing your note here.." rows="6"></textarea>
 
     <div class ="button-group">
     <button name= "add-btn">Add Note</button>
-    <button name="cancel-btn">Cancel</button>
+    <a href = "/users/<%= user._id %>/notes" class="btn cancel-btn">Cancel</a>
     </div>
 </form>
 </div>

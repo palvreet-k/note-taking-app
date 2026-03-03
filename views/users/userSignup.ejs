@@ -6,18 +6,17 @@
     <title>My Notes Sign Up</title>
 
     <!-- Link external CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <h1>Create a New Account</h1>
 
-    <form action="/user/userSignup" method="POST" class="login-form">
+    <form action="/users/userSignup" method="POST" class="login-form">
         <input name="username" placeholder="Enter your username" required/>
         <input name="password" placeholder="Enter your password" type="password" required/>
         <input name="confirmPassword" placeholder="Confirm your password" type="password" required/>
-        <button class="btn" name="signup-btn">Sign Up</button>
+        <button class="btn signup-btn" name="signup-btn">Sign Up</button>
+        <a href="/users/" class="btn auth-switch">Already have an account? Login</a>
     </form>
-
-    <a href="/note/userLogin" class="btn">Already have an account? Login</a>
 </body>
 </html>

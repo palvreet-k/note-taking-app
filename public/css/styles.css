@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gveret+Levin&display=swap');
+
 /* General Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  background: url('/bg.jpg') center/cover no-repeat fixed;
   margin: 0;
   padding: 30px;
   color: #333;
@@ -12,11 +20,49 @@ h1 {
   text-align: center;
   margin-top: 50px;
   color: #333;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-weight: 700;
+  text-align: center;
+}
+
+.heading-font {
+  font-family: "Gveret Levin", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.greeting {
+  font-size: 36px;
+  font-weight: 600;
 }
 
 .container {
   max-width: 900px;
   margin: auto;
+}
+
+.notes-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px auto;
+}
+
+#notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+#notes > p {
+  grid-column: 1 / -1;
 }
 
 /* Notes Styles */
@@ -26,30 +72,54 @@ h1 {
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#notes .note:nth-child(4n + 1) {
+  background: #fff8e1;
+}
+
+#notes .note:nth-child(4n + 2) {
+  background: #e8f5ff;
+}
+
+#notes .note:nth-child(4n + 3) {
+  background: #eafaf1;
+}
+
+#notes .note:nth-child(4n + 4) {
+  background: #f3ecff;
 }
 
 .note-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .note h3 {
   margin: 0;
+  font-size: 22px;
 }
 
 .note small {
   color: #888;
+  font-size: 12px;
 }
 
 .note p {
   margin: 15px 0;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .actions {
   display: flex;
   gap: 10px;
+  margin-top: auto;
 }
 
 /* Buttons */
@@ -68,9 +138,16 @@ h1 {
   opacity: 0.85;
 }
 
-.add-btn {
-  background: #007bff;
+.add-btn,
+.note-form .button-group button[name="add-btn"],
+.note-form .button-group button[name="update-note"] {
+  background: #1f7a35;
   color: white;
+}
+
+.add-btn {
+  font-size: 16px;
+  padding: 10px 18px;
 }
 
 .edit-btn {
@@ -78,9 +155,18 @@ h1 {
   color: #333;
 }
 
-.delete-btn {
+.delete-btn,
+.cancel-btn,
+.signout-btn {
   background: #dc3545;
   color: white;
+}
+
+.signout-btn {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 1000;
 }
 
 /* Forms (Add/Edit Note) */
@@ -92,46 +178,51 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 600px;
+  max-width: 800px;
   margin: 30px auto;
 }
 
-.note-form input {
+.edit-form {
+  background: #dff0f6;
+}
+
+.note-form input,
+.note-form textarea {
   padding: 12px 15px;
   font-size: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
   outline: none;
   width: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.note-form input:focus {
+.note-form textarea {
+  resize: vertical;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
   border-color: #007bff;
 }
 
 .note-form .button-group {
   display: flex;
   gap: 15px;
+  align-items: stretch;
 }
 
-.note-form .button-group button,
-.note-form .button-group .btn {
+.note-form .button-group :is(button, .btn) {
   flex: 1;
   padding: 12px 0;
   font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-}
-
-.note-form .button-group button[name="add-btn"] {
-  background: #007bff;
-  color: white;
-}
-
-.note-form .button-group button[name="cancel-btn"] {
-  background: #dc3545;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Login/Signup Forms */
@@ -145,6 +236,10 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.login-form label {
+  font-weight: 700;
 }
 
 .login-form input {
@@ -161,7 +256,7 @@ h1 {
 }
 
 .login-form button,
-.login-form + a.btn {
+.login-form .btn {
   padding: 12px 0;
   font-size: 16px;
   border: none;
@@ -176,12 +271,17 @@ h1 {
 }
 
 .login-form button:hover,
-.login-form + a.btn:hover {
+.login-form .btn:hover {
   opacity: 0.85;
 }
 
-/* Sign Up link under login form */
-.login-form + a.btn {
-  margin-top: 15px;
+.login-form button[name="login-btn"],
+.login-form button[name="signup-btn"] {
+  background: #28a745;
+}
+
+/* Sign Up link inside login form */
+.login-form .btn {
+  margin-top: 10px;
   text-decoration: none;
 }

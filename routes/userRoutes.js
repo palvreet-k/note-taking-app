@@ -1,11 +1,12 @@
 
-import{showUserLoginPage, loginSucess, showSignupPage, signupSucess} from "../controllers/users"
+import express from 'express';
+import{showUserLoginPage, loginSucess, showSignupPage, signupSucess} from "../controllers/usersController.js"
 
 const router = express.Router();
 
 router.get("/", showUserLoginPage);
 router.post("/", loginSucess);
-router.get("/user/signup", showSignupPage)
-router.post("/user/signup", signupSucess)
+router.get("/userSignup", showSignupPage)
+router.post("/userSignup", signupSucess)
 
 export default router;

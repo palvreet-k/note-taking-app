@@ -6,18 +6,18 @@
     <title>Edit Note</title>
 
     <!-- Link external CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<h1>Edit Note : <%= note.title %></h1>
+<h1 class="heading-font">Edit Note : <%= note.title %></h1>
 <div class ="container">
-<form action="/notes/allNotes" method = "POST" class ="note-form">
+<form action="/users/<%= note.userId %>/notes/editNote/<%= note._id%>" method = "POST" class ="note-form edit-form">
     <input name = "title" value="<%=note.title%>" required/>
-    <input name = "content" value="<%=note.content%>" />
+    <textarea name="content" rows="6"><%= note.content %></textarea>
 
     <div class ="button-group">
     <button name= "update-note">Update</button>
-    <a href="/notes/allNotes" class="btn cancel-btn">Cancel</a>
+    <a href="/users/<%= note.userId %>/notes" class="btn cancel-btn">Cancel</a>
     </div>
 </form>
 </div>
