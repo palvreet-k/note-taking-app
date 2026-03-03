@@ -1,5 +1,66 @@
 # note-taking-app
-A full-stack web-based Note Taking Application that allows users to create, edit, delete, and organize notes with persistent database storage and RESTful API integration.
+
+> A simple, focused note-taking web app — create, edit, and delete notes with persistent storage.
+
+---
+
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Node](https://img.shields.io/badge/node-%3E%3D14-brightgreen)
+
+## Table of Contents
+- [About](#about)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Tech](#tech)
+- [Notes](#notes)
+
+---
+
+## About
+
+This repository contains a compact Node.js + Express app with Passport local authentication and MongoDB persistence for user notes. The README focuses on clear, scannable instructions.
+
+## Quick Start
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start a MongoDB instance (local or cloud) and set environment variables:
+
+```bash
+export MONGO_URI="mongodb://localhost:27017/notes"
+export PORT=3000
+```
+
+3. Run the app:
+
+```bash
+npm start
+```
+
+Open http://localhost:3000 in your browser.
+
+## Usage
+
+- Sign up to create an account.
+- Add, edit, and delete notes from your dashboard.
+
+## Tech
+
+- Node.js, Express
+- EJS templates
+- Passport (local strategy)
+- MongoDB / Mongoose
+
+## Notes
+
+- This README was rewritten for clarity and styling only — no app behavior changes.
+
+---
+
+If you'd like a longer walkthrough, screenshots, or a quick demo script added, tell me which you'd prefer and I will extend this file.
 
 Note taking App uses Following:
 MongoDB for Database storage of users and their respective notes
@@ -16,6 +77,7 @@ Configuration:
     npm i express ejs mongoose dotenv method-override node router
     npm i -D nodemon
     npm i passport passport-local express-session
+    
 3. Enable ES MOdules:
     In package.json, add:
     "type": "module"
