@@ -64,7 +64,7 @@ npm start
 localhost:3000/
 ```
 
-7. Create a new using by Going to Sign up link
+7. Create a new User by clicking Sign up link
 8. Login using new credentials
 9. Create a New Note by clicking "Add Note"
 10. Edit note using "Edit" and Update
