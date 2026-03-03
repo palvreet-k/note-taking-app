@@ -6,15 +6,11 @@ export const showUserLoginPage = (req,res)=>{
 }
 
 export const loginUser = (req, res, next) => {
-    passport.authenticate('local', function(err, user, info) {
-        if (err) { return next(err); }
-        if (!user) { return res.redirect('/crash'); }
-        req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            return res.redirect(`/users/${user._id}/notes`);
-        });
+    passport.authenticate('local', {
+        successRedirect: '/notes',
+        failureRedirect: '/crash'
     })(req, res, next);
-};
+}
 
 export const logoutUser = (req, res, next) => {
     req.logout(function(err){

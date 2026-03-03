@@ -14,7 +14,7 @@
     <h1 class="greeting heading-font">Welcome <%= user.username %>!</h1>
     <h1 class="heading-font">Your Notes</h1>
     <div class="container notes-toolbar">
-        <a href="/users/<%= user._id %>/notes/addNote" class="btn add-btn"> + Add Note</a>
+        <a href="/notes/addNote" class="btn add-btn"> + Add Note</a>
     </div>
     <div class="container" id="notes">
         <% if(notes.length===0) {%>
@@ -34,8 +34,8 @@
                             <%=note.content%>
                         </p>
                         <div class="actions">
-                            <a href="/users/<%= user._id %>/notes/editNote/<%= note._id%>" class="btn edit-btn">Edit Note</a>
-                            <form action="/users/<%= user._id %>/notes/deleteNote/<%= note._id %>" method="POST">
+                            <a href="/notes/editNote/<%= note._id%>" class="btn edit-btn">Edit Note</a>
+                            <form action="/notes/deleteNote/<%= note._id %>" method="POST">
                                 <button type="submit" class="btn delete-btn">Delete</button>
                             </form>
                         </div>

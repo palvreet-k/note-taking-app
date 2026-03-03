@@ -11,13 +11,13 @@
 <body>
 <h1 class="heading-font">Edit Note : <%= note.title %></h1>
 <div class ="container">
-<form action="/users/<%= note.userId %>/notes/editNote/<%= note._id%>" method = "POST" class ="note-form edit-form">
+<form action="/notes/editNote/<%= note._id%>" method = "POST" class ="note-form">
     <input name = "title" value="<%=note.title%>" required/>
     <textarea name="content" rows="6"><%= note.content %></textarea>
 
     <div class ="button-group">
     <button name= "update-note">Update</button>
-    <a href="/users/<%= note.userId %>/notes" class="btn cancel-btn">Cancel</a>
+    <a href="/notes" class="btn cancel-btn">Cancel</a>
     </div>
 </form>
 </div>

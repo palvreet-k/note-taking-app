@@ -55,6 +55,7 @@ p {
   margin: 16px auto;
 }
 
+/* Grid for Notes display */
 #notes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -75,7 +76,10 @@ p {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
 }
+
+/* 4 Alternate background colors for notes */
 
 #notes .note:nth-child(4n + 1) {
   background: #fff8e1;
@@ -114,6 +118,11 @@ p {
   margin: 15px 0;
   line-height: 1.5;
   white-space: pre-line;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow: auto;
 }
 
 .actions {
@@ -169,7 +178,7 @@ p {
   z-index: 1000;
 }
 
-/* Forms (Add/Edit Note) */
+/* Forms (Add/Edit Note) .btn used for links*/
 .note-form {
   background: #ffffff;
   padding: 25px;
@@ -180,10 +189,6 @@ p {
   gap: 15px;
   max-width: 800px;
   margin: 30px auto;
-}
-
-.edit-form {
-  background: #dff0f6;
 }
 
 .note-form input,
@@ -199,6 +204,9 @@ p {
 
 .note-form textarea {
   resize: vertical;
+  max-height: 480px;
+  overflow: auto;
+  white-space: pre-wrap;
 }
 
 .note-form input:focus,
@@ -225,7 +233,7 @@ p {
   text-align: center;
 }
 
-/* Login/Signup Forms */
+/* Login/Signup Forms - using same styles for both login-form */
 .login-form {
   background: #ffffff;
   padding: 30px;
@@ -278,10 +286,4 @@ p {
 .login-form button[name="login-btn"],
 .login-form button[name="signup-btn"] {
   background: #28a745;
-}
-
-/* Sign Up link inside login form */
-.login-form .btn {
-  margin-top: 10px;
-  text-decoration: none;
 }

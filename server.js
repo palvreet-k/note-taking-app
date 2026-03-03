@@ -42,7 +42,7 @@ export function ensureAuthenticated(req, res, next){
 
 // Routes
 app.use('/', userRoutes);
-app.use('/users/:userId/notes', noteRoutes);
+app.use('/notes', noteRoutes);
 
 // Error Handling
 app.use((req,res, next) =>{

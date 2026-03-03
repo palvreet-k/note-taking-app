@@ -9,8 +9,8 @@ router.get("/", ensureAuthenticated, showAllNotes)
 router.get("/addNote", ensureAuthenticated, showNewNoteForm)
 router.post("/addNote", ensureAuthenticated, addNoteSuccess)
 router.get("/editNote/:id", ensureAuthenticated, showEditNoteForm)
-router.put("/editNote/:id", ensureAuthenticated, editNoteSucess)
-router.delete("/deleteNote/:id", ensureAuthenticated, deleteNote)
+router.post("/editNote/:id", ensureAuthenticated, editNoteSucess)
+router.post("/deleteNote/:id", ensureAuthenticated, deleteNote)
 
 export default router;
 
