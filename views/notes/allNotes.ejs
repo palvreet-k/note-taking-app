@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,8 @@
                                 <%= note.title %>
                             </h3>
                             <small>
-                                <%= note.date ? new Date(note.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).replace(',', '') : '' %>
+                                <%= note.date ? new Date(note.date).toLocaleDateString('en-US', { month: 'long' ,
+                                    day: 'numeric' , year: 'numeric' }).replace(',', '' ) : '' %>
                             </small>
                         </div>
                         <p>

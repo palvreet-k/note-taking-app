@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,20 @@
     <!-- Link external CSS -->
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-<h1 class="heading-font">Add New Note</h1>
-<div class ="container">
-<form action="/notes/addNote" method = "POST" class ="note-form">
-    <input name = "title" placeholder="Add Note Title" required/>
-    <textarea name="content" placeholder="Start Typing your note here.." rows="6"></textarea>
 
-    <div class ="button-group">
-    <button name= "add-btn">Add Note</button>
-    <a href = "/notes" class="btn cancel-btn">Cancel</a>
+<body>
+    <h1 class="heading-font">Add New Note</h1>
+    <div class="container">
+        <form action="/notes/addNote" method="POST" class="note-form">
+            <input name="title" placeholder="Add Note Title" required />
+            <textarea name="content" placeholder="Start Typing your note here.." rows="6"></textarea>
+
+            <div class="button-group">
+                <button name="add-btn">Add Note</button>
+                <a href="/notes" class="btn cancel-btn">Cancel</a>
+            </div>
+        </form>
     </div>
-</form>
-</div>
 </body>
+
 </html>
